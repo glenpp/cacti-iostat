@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/cut -d' ' -f$1 /var/local/snmp/iostat
