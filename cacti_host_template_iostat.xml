@@ -160,6 +160,21 @@
 				<sv_data_source>
 				</sv_data_source>
 			</hash_1100219fa5a949cca2c3613f5050a59233dbaf>
+			<hash_1100218b5d6bd2ae61829064805bfffe2697a3>
+				<name>iostat svctm</name>
+				<graph_template_id>hash_000021d8363aaaeb58770afc291d808383fcc3</graph_template_id>
+				<rrd>
+					<item_000>
+						<snmp_field_name>iostat_svctm</snmp_field_name>
+						<data_template_id>hash_01002106ead164c96732e21a9213e76f114127</data_template_id>
+						<data_template_rrd_id>hash_080021211471a6a5cfdaae1473c61faa22e8ba</data_template_rrd_id>
+					</item_000>
+				</rrd>
+				<sv_graph>
+				</sv_graph>
+				<sv_data_source>
+				</sv_data_source>
+			</hash_1100218b5d6bd2ae61829064805bfffe2697a3>
 		</graphs>
 	</hash_040021cdaa1514f7af93cc7d01c864b4a79064>
 	<hash_030021bf566c869ac6443b0c75d1c32b5a350e>
@@ -718,7 +733,7 @@
 			<t_unit_exponent_value></t_unit_exponent_value>
 			<unit_exponent_value></unit_exponent_value>
 			<t_vertical_label></t_vertical_label>
-			<vertical_label>sectors</vertical_label>
+			<vertical_label>requests</vertical_label>
 		</graph>
 		<items>
 			<hash_10002175e4396ccbb7d6dbc510f813d9c2e4a4>
@@ -821,6 +836,83 @@
 			</hash_090021ac21d8e60e76d9f71574cc3b54afe0d1>
 		</inputs>
 	</hash_0000215c831f682d58d7bfe26a876b5cf5f02b>
+	<hash_000021d8363aaaeb58770afc291d808383fcc3>
+		<name>iostat svctm</name>
+		<graph>
+			<t_title></t_title>
+			<title>|host_description| |query_iostatDevices| - iostat svctm</title>
+			<t_image_format_id></t_image_format_id>
+			<image_format_id>1</image_format_id>
+			<t_height></t_height>
+			<height>120</height>
+			<t_width></t_width>
+			<width>500</width>
+			<t_slope_mode></t_slope_mode>
+			<slope_mode>on</slope_mode>
+			<t_auto_scale></t_auto_scale>
+			<auto_scale>on</auto_scale>
+			<t_auto_scale_opts></t_auto_scale_opts>
+			<auto_scale_opts>2</auto_scale_opts>
+			<t_auto_scale_log></t_auto_scale_log>
+			<auto_scale_log></auto_scale_log>
+			<t_scale_log_units></t_scale_log_units>
+			<scale_log_units></scale_log_units>
+			<t_auto_scale_rigid></t_auto_scale_rigid>
+			<auto_scale_rigid></auto_scale_rigid>
+			<t_auto_padding></t_auto_padding>
+			<auto_padding>on</auto_padding>
+			<t_export></t_export>
+			<export>on</export>
+			<t_upper_limit></t_upper_limit>
+			<upper_limit>100</upper_limit>
+			<t_lower_limit></t_lower_limit>
+			<lower_limit>0</lower_limit>
+			<t_base_value></t_base_value>
+			<base_value>1000</base_value>
+			<t_unit_value></t_unit_value>
+			<unit_value></unit_value>
+			<t_unit_exponent_value></t_unit_exponent_value>
+			<unit_exponent_value></unit_exponent_value>
+			<t_vertical_label></t_vertical_label>
+			<vertical_label>seconds</vertical_label>
+		</graph>
+		<items>
+			<hash_100021f1b89eaafd783c9222ea35f3f72cfbef>
+				<task_item_id>hash_080021211471a6a5cfdaae1473c61faa22e8ba</task_item_id>
+				<color_id>FF0000</color_id>
+				<alpha>FF</alpha>
+				<graph_type_id>7</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>hash_050021ce56e73b2cd2e08a4857937794d79587</cdef_id>
+				<value></value>
+				<gprint_id>hash_060021e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format>svctm</text_format>
+				<hard_return></hard_return>
+				<sequence>1</sequence>
+			</hash_100021f1b89eaafd783c9222ea35f3f72cfbef>
+			<hash_100021ef1fbccb34f09510a9abcbb9e07f0e0b>
+				<task_item_id>hash_080021211471a6a5cfdaae1473c61faa22e8ba</task_item_id>
+				<color_id>F51D30</color_id>
+				<alpha>FF</alpha>
+				<graph_type_id>5</graph_type_id>
+				<consolidation_function_id>3</consolidation_function_id>
+				<cdef_id>hash_050021ce56e73b2cd2e08a4857937794d79587</cdef_id>
+				<value></value>
+				<gprint_id>hash_060021e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format>Maximum</text_format>
+				<hard_return></hard_return>
+				<sequence>2</sequence>
+			</hash_100021ef1fbccb34f09510a9abcbb9e07f0e0b>
+		</items>
+		<inputs>
+			<hash_090021f3e9bb835441768f7ca499ea669d4174>
+				<name>Data Source [iostatsvctm]</name>
+				<description></description>
+				<column_name>task_item_id</column_name>
+				<items>hash_000021ef1fbccb34f09510a9abcbb9e07f0e0b|hash_000021f1b89eaafd783c9222ea35f3f72cfbef</items>
+			</hash_090021f3e9bb835441768f7ca499ea669d4174>
+		</inputs>
+	</hash_000021d8363aaaeb58770afc291d808383fcc3>
 	<hash_000021f5c6db63832fcdde73bcccd9c2aa1df8>
 		<name>iostat %util</name>
 		<graph>
@@ -1873,6 +1965,98 @@
 			</item_011>
 		</data>
 	</hash_010021dde57aa1654cf9c7cd8ef5a3302e2980>
+	<hash_01002106ead164c96732e21a9213e76f114127>
+		<name>iostat svctm</name>
+		<ds>
+			<t_name></t_name>
+			<name>|host_description| |query_iostatDevices| - iostat svctm</name>
+			<data_input_id>hash_030021bf566c869ac6443b0c75d1c32b5a350e</data_input_id>
+			<t_rra_id></t_rra_id>
+			<t_rrd_step></t_rrd_step>
+			<rrd_step>300</rrd_step>
+			<t_active></t_active>
+			<active>on</active>
+			<rra_items>hash_150021c21df5178e5c955013591239eb0afd46|hash_1500210d9c0af8b8acdc7807943937b3208e29|hash_1500216fc2d038fb42950138b0ce3e9874cc60|hash_150021e36f3adb9f152adfa5dc50fd2b23337e|hash_150021283ea2bf1634d92ce081ec82a634f513</rra_items>
+		</ds>
+		<items>
+			<hash_080021211471a6a5cfdaae1473c61faa22e8ba>
+				<t_data_source_name></t_data_source_name>
+				<data_source_name>iostatsvctm</data_source_name>
+				<t_rrd_minimum></t_rrd_minimum>
+				<rrd_minimum>0</rrd_minimum>
+				<t_rrd_maximum></t_rrd_maximum>
+				<rrd_maximum>1000000</rrd_maximum>
+				<t_data_source_type_id></t_data_source_type_id>
+				<data_source_type_id>1</data_source_type_id>
+				<t_rrd_heartbeat></t_rrd_heartbeat>
+				<rrd_heartbeat>600</rrd_heartbeat>
+				<t_data_input_field_id></t_data_input_field_id>
+				<data_input_field_id>0</data_input_field_id>
+			</hash_080021211471a6a5cfdaae1473c61faa22e8ba>
+		</items>
+		<data>
+			<item_000>
+				<data_input_field_id>hash_0700213a33d4fc65b8329ab2ac46a36da26b72</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_000>
+			<item_001>
+				<data_input_field_id>hash_0700216b13ac0a0194e171d241d4b06f913158</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_001>
+			<item_002>
+				<data_input_field_id>hash_0700212cf7129ad3ff819a7a7ac189bee48ce8</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_002>
+			<item_003>
+				<data_input_field_id>hash_070021c1f36ee60c3dc98945556d57f26e475b</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_003>
+			<item_004>
+				<data_input_field_id>hash_070021e6deda7be0f391399c5130e7c4a48b28</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_004>
+			<item_005>
+				<data_input_field_id>hash_070021cbbe5c1ddfb264a6e5d509ce1c78c95f</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_005>
+			<item_006>
+				<data_input_field_id>hash_0700216027a919c7c7731fbe095b6f53ab127b</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_006>
+			<item_007>
+				<data_input_field_id>hash_070021b5c23f246559df38662c255f4aa21d6b</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_007>
+			<item_008>
+				<data_input_field_id>hash_0700211cc1493a6781af2c478fa4de971531cf</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_008>
+			<item_009>
+				<data_input_field_id>hash_070021f4facc5e2ca7ebee621f09bc6d9fc792</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_009>
+			<item_010>
+				<data_input_field_id>hash_070021acb449d1451e8a2a655c2c99d31142c7</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_010>
+			<item_011>
+				<data_input_field_id>hash_070021617cdc8a230615e59f06f361ef6e7728</data_input_field_id>
+				<t_value></t_value>
+				<value></value>
+			</item_011>
+		</data>
+	</hash_01002106ead164c96732e21a9213e76f114127>
 	<hash_010021fd1171d297a1c3e4af62d836aa66457b>
 		<name>iostat %util</name>
 		<ds>
