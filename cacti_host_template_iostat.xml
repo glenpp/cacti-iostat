@@ -296,7 +296,7 @@
 		<name>iostat rqm/s</name>
 		<graph>
 			<t_title></t_title>
-			<title>|host_description| |query_iostatDevices| - iostat rqm/s</title>
+			<title>|host_description| iostat rqm/s - |query_iostatDevices|:|query_iostatMountpoint|</title>
 			<t_image_format_id></t_image_format_id>
 			<image_format_id>1</image_format_id>
 			<t_height></t_height>
@@ -405,7 +405,7 @@
 		<name>iostat rw/s</name>
 		<graph>
 			<t_title></t_title>
-			<title>|host_description| |query_iostatDevices| - iostat rw/s</title>
+			<title>|host_description| iostat rw/s - |query_iostatDevices|:|query_iostatMountpoint|</title>
 			<t_image_format_id></t_image_format_id>
 			<image_format_id>1</image_format_id>
 			<t_height></t_height>
@@ -514,7 +514,7 @@
 		<name>iostat rwB/s</name>
 		<graph>
 			<t_title></t_title>
-			<title>|host_description| |query_iostatDevices| - iostat rwB/s</title>
+			<title>|host_description| iostat rwB/s - |query_iostatDevices|:|query_iostatMountpoint|</title>
 			<t_image_format_id></t_image_format_id>
 			<image_format_id>1</image_format_id>
 			<t_height></t_height>
@@ -635,7 +635,7 @@
 		<name>iostat avgrq-sz</name>
 		<graph>
 			<t_title></t_title>
-			<title>|host_description| |query_iostatDevices| - iostat avgrq-sz</title>
+			<title>|host_description| iostat avgrq-sz - |query_iostatDevices|:|query_iostatMountpoint|</title>
 			<t_image_format_id></t_image_format_id>
 			<image_format_id>1</image_format_id>
 			<t_height></t_height>
@@ -699,7 +699,7 @@
 		<name>iostat avgqu-sz</name>
 		<graph>
 			<t_title></t_title>
-			<title>|host_description| |query_iostatDevices| - iostat avgqu-sz</title>
+			<title>|host_description| iostat avgqu-sz - |query_iostatDevices|:|query_iostatMountpoint|</title>
 			<t_image_format_id></t_image_format_id>
 			<image_format_id>1</image_format_id>
 			<t_height></t_height>
@@ -763,7 +763,7 @@
 		<name>iostat await</name>
 		<graph>
 			<t_title></t_title>
-			<title>|host_description| |query_iostatDevices| - iostat await</title>
+			<title>|host_description| iostat await - |query_iostatDevices|:|query_iostatMountpoint|</title>
 			<t_image_format_id></t_image_format_id>
 			<image_format_id>1</image_format_id>
 			<t_height></t_height>
@@ -840,7 +840,7 @@
 		<name>iostat svctm</name>
 		<graph>
 			<t_title></t_title>
-			<title>|host_description| |query_iostatDevices| - iostat svctm</title>
+			<title>|host_description| iostat svctm - |query_iostatDevices|:|query_iostatMountpoint|</title>
 			<t_image_format_id></t_image_format_id>
 			<image_format_id>1</image_format_id>
 			<t_height></t_height>
@@ -917,7 +917,7 @@
 		<name>iostat %util</name>
 		<graph>
 			<t_title></t_title>
-			<title>|host_description| |query_iostatDevices| - iostat %util</title>
+			<title>|host_description| iostat %util - |query_iostatDevices|:|query_iostatMountpoint|</title>
 			<t_image_format_id></t_image_format_id>
 			<image_format_id>1</image_format_id>
 			<t_height></t_height>
@@ -994,7 +994,7 @@
 		<name>iostat merge efficiency</name>
 		<graph>
 			<t_title></t_title>
-			<title>|host_description| |query_iostatDevices| - iostat merge efficiency</title>
+			<title>|host_description| iostat merge efficiency - |query_iostatDevices|:|query_iostatMountpoint|</title>
 			<t_image_format_id></t_image_format_id>
 			<image_format_id>1</image_format_id>
 			<t_height></t_height>

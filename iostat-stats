@@ -17,6 +17,35 @@
 #
 #
 # See: http://www.pitt-pladdy.com/blog/_20121016-200723_0100_iostat_on_Cacti_via_SNMP/
+#
+# Version 20121028
+
+findmountpoint () {
+	while read line; do
+		dev=`/bin/echo $line | cut -d' ' -f1`
+		path=`/bin/echo $line | cut -d' ' -f2`
+		devshort=`/bin/echo $dev | sed 's/^.*\///'`
+		if [ $1 = $devshort ]; then
+			/bin/echo $path
+			return
+		fi
+		link=`readlink $dev`
+		if [ ! -z $link ]; then
+			devshort=`/bin/echo $link | sed 's/^.*\///'`
+			if [ $1 = $devshort ]; then
+				/bin/echo Mounted on $path
+				return
+			fi
+		fi
+	done </proc/mounts
+	/bin/echo Not mounted
+}
 
 
-/usr/bin/cut -d' ' -f$1 /var/local/snmp/iostat
+if [ $1 != 'mountpoint' ]; then
+	/usr/bin/cut -d' ' -f$1 /var/local/snmp/iostat
+else
+	for dev in `/usr/bin/cut -d' ' -f1 /var/local/snmp/iostat`; do
+		findmountpoint $dev
+	done
+fi
