@@ -18,34 +18,43 @@
 #
 # See: http://www.pitt-pladdy.com/blog/_20121016-200723_0100_iostat_on_Cacti_via_SNMP/
 #
-# Version 20121028
+# Version 20130412
+#
+# Thanks to:
+#	"Tim" - readlink error diagnosis
+
+STATSFILE=/var/local/snmp/iostat
+
+
 
 findmountpoint () {
 	while read line; do
-		dev=`/bin/echo $line | cut -d' ' -f1`
-		path=`/bin/echo $line | cut -d' ' -f2`
-		devshort=`/bin/echo $dev | sed 's/^.*\///'`
+		dev=`echo $line | cut -d' ' -f1`
+		path=`echo $line | cut -d' ' -f2`
+		devshort=`echo $dev | sed 's/^.*\///'`
 		if [ $1 = $devshort ]; then
-			/bin/echo $path
+			echo $path
 			return
 		fi
+		# no match on device (direct) - check for symlinks
+		echo $dev | grep -q '^-' && continue
 		link=`readlink $dev`
-		if [ ! -z $link ]; then
-			devshort=`/bin/echo $link | sed 's/^.*\///'`
+		if [ ! -z "$link" ]; then
+			devshort=`echo $link | sed 's/^.*\///'`
 			if [ $1 = $devshort ]; then
-				/bin/echo Mounted on $path
+				echo Mounted on $path
 				return
 			fi
 		fi
 	done </proc/mounts
-	/bin/echo Not mounted
+	echo Not mounted
 }
 
 
 if [ $1 != 'mountpoint' ]; then
-	/usr/bin/cut -d' ' -f$1 /var/local/snmp/iostat
+	cut -d' ' -f$1 $STATSFILE
 else
-	for dev in `/usr/bin/cut -d' ' -f1 /var/local/snmp/iostat`; do
+	for dev in `cut -d' ' -f1 $STATSFILE`; do
 		findmountpoint $dev
 	done
 fi
