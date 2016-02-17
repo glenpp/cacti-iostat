@@ -16,9 +16,17 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 #
-# See: http://www.pitt-pladdy.com/blog/_20121016-200723_0100_iostat_on_Cacti_via_SNMP/
+# See: https://www.pitt-pladdy.com/blog/_20121016-200723_0100_iostat_on_Cacti_via_SNMP/
 #
 # Version 20130711
+
+
+# iostat options:
+#	-N = Device Mapper Names, Optional
+#	-d = Utilisation report, Manditory to show all data on all distros
+#	-k = Kbytes units, Manditory to match Cacti graph units
+#	-x = Extended stats, Manditory to show all expected data for Cacti
+#	-p ALL = show all partitions, Optional
 
 
 /usr/bin/iostat -Ndkx 300 2 \
@@ -32,7 +40,7 @@ mv $1.tmp$$ $1
 # get the mountpoints cached
 for dev in `cut -d' ' -f1 $1`; do
 	path=`grep ^/dev/ /proc/mounts | grep -m  1 "^/[^ ]*/$dev " | cut -d' ' -f2`
-	if [ ! -z "$path" ]; then
+	if [ -n "$path" ]; then
 		echo $path >>$1-mountpoints.tmp$$
 		continue
 	fi
