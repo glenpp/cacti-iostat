@@ -63,10 +63,15 @@ def get_mounts(devices):
     # resolve devices to mounts
     dev_mounts = {}
     for iostat_device in devices:
+        alias_device = None
+        if iostat_device.startswith('scd'):
+            alias_device = 'sr' + iostat_device[3:]
         if os.path.exists(os.path.join('/dev/', iostat_device)):
             device = os.path.join('/dev/', iostat_device)
         elif os.path.exists(os.path.join('/dev/mapper/', iostat_device)):
             device = os.path.join('/dev/mapper/', iostat_device)
+        elif os.path.exists(os.path.join('/dev/', alias_device)):
+            device = os.path.join('/dev/', alias_device)
         else:
             raise OSError("Can't find device: {}".format(iostat_device))
         while device not in mounts and os.path.islink(device):
