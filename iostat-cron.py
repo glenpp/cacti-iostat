@@ -70,7 +70,7 @@ def get_mounts(devices):
             device = os.path.join('/dev/', iostat_device)
         elif os.path.exists(os.path.join('/dev/mapper/', iostat_device)):
             device = os.path.join('/dev/mapper/', iostat_device)
-        elif os.path.exists(os.path.join('/dev/', alias_device)):
+        elif alias_device and os.path.exists(os.path.join('/dev/', alias_device)):
             device = os.path.join('/dev/', alias_device)
         else:
             raise OSError("Can't find device: {}".format(iostat_device))
