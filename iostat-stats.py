@@ -44,7 +44,7 @@ def main():
     if key == 'mountpoint':
         key = '_mountpoint'
         empty = 'Not mounted'
-    elif key == 'ddevcount':
+    elif key == 'devcount':
         print(len(data))
         return
     for stat in data:
