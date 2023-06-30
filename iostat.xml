@@ -3,6 +3,7 @@
 	<!--index_order>iostatDeviceIndex</index_order-->
 	<index_order_type>numeric</index_order_type>
 	<oid_index>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatdev"</oid_index>
+	<oid_num_indexes>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatdevcount"</oid_num_indexes>
 
 	<fields>
 
@@ -21,23 +22,6 @@
 			<direction>input</direction>
 			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatmountpoint"</oid>
 		</iostatMountpoint>
-
-
-		<iostat_rrqms>
-			<name>rrqm/s</name>
-			<method>walk</method>
-			<source>value</source>
-			<direction>output</direction>
-			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatrrqms"</oid>
-		</iostat_rrqms>
-
-		<iostat_wrqms>
-			<name>wrqm/s</name>
-			<method>walk</method>
-			<source>value</source>
-			<direction>output</direction>
-			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatwrqms"</oid>
-		</iostat_wrqms>
 
 		<iostat_rs>
 			<name>r/s</name>
@@ -71,29 +55,37 @@
 			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatwkbs"</oid>
 		</iostat_wkbs>
 
-		<iostat_avgrqsz>
-			<name>avgrq-sz</name>
+		<iostat_rrqms>
+			<name>rrqm/s</name>
 			<method>walk</method>
 			<source>value</source>
 			<direction>output</direction>
-			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatavgrqsz"</oid>
-		</iostat_avgrqsz>
+			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatrrqms"</oid>
+		</iostat_rrqms>
 
-		<iostat_avgqusz>
-			<name>avgqu-sz</name>
+		<iostat_wrqms>
+			<name>wrqm/s</name>
 			<method>walk</method>
 			<source>value</source>
 			<direction>output</direction>
-			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatavgqusz"</oid>
-		</iostat_avgqusz>
+			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatwrqms"</oid>
+		</iostat_wrqms>
 
-		<iostat_await>
-			<name>await</name>
+		<iostat_rrqm>
+			<name>rrqm%</name>
 			<method>walk</method>
 			<source>value</source>
 			<direction>output</direction>
-			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatawait"</oid>
-		</iostat_await>
+			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatrrqm"</oid>
+		</iostat_rrqm>
+
+		<iostat_wrqm>
+			<name>wrqm%</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatwrqm"</oid>
+		</iostat_wrqm>
 
 		<iostat_rawait>
 			<name>r_await</name>
@@ -110,6 +102,30 @@
 			<direction>output</direction>
 			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatwawait"</oid>
 		</iostat_wawait>
+
+		<iostat_avgqusz>
+			<name>avgqu-sz</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatavgqusz"</oid>
+		</iostat_avgqusz>
+
+		<iostat_rrqsz>
+			<name>rrqsz</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatrrqsz"</oid>
+		</iostat_rrqsz>
+
+		<iostat_wrqsz>
+			<name>wrqsz</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>NET-SNMP-EXTEND-MIB::nsExtendOutLine."iostatwrqsz"</oid>
+		</iostat_wrqsz>
 
 		<iostat_svctm>
 			<name>svctm</name>
