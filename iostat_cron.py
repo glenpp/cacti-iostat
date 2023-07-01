@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Copyright (C) 2021  Glen Pitt-Pladdy
+Copyright (C) 2021-2023  Glen Pitt-Pladdy
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -17,9 +17,9 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 
-See: https://www.pitt-pladdy.com/blog/_20121016-200723_0100_iostat_on_Cacti_via_SNMP/
+See: https://github.com/glenpp/cacti-iostat
 
-Version 20211109
+Version 20230701
 """
 
 import sys
